@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRAIDER - Request Withdrawal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0f19;
+      color: #f3f4f6;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-blue-600 selection:text-white min-h-screen flex flex-col">
+
+  <!-- Navigation -->
+  <nav class="bg-slate-900 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="dashboard.html" class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-extrabold text-xl text-white shadow-lg">
+          P
+        </div>
+        <span class="text-2xl font-bold tracking-wider text-white">PRAIDER</span>
+      </a>
+
+      <div class="flex items-center space-x-4">
+        <a href="dashboard.html" class="text-xs text-gray-400 hover:text-white transition flex items-center space-x-1">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          <span>Back to Dashboard</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Withdrawal Container -->
+  <main class="flex-1 max-w-3xl w-full mx-auto px-6 py-10">
+    
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-white">Withdraw Funds</h1>
+      <p class="text-sm text-gray-400 mt-1">Payout profits and funds directly to your external cryptocurrency wallet.</p>
+    </div>
+
+    <!-- Balance Summary Card -->
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 mb-8 flex flex-wrap justify-between items-center gap-4">
+      <div>
+        <span class="text-xs font-semibold text-gray-400 uppercase">Available Payout Balance</span>
+        <h2 class="text-3xl font-bold text-emerald-400 mt-1">$4,850.20</h2>
+      </div>
+      <div class="text-right">
+        <span class="text-xs text-gray-400">Min. Withdrawal: <strong class="text-white">$20.00</strong></span>
+        <p class="text-xs text-gray-400 mt-1">Processing Time: <strong class="text-white">Instant - 15 Mins</strong></p>
+      </div>
+    </div>
+
+    <!-- Withdrawal Form -->
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+      <form onsubmit="handleWithdrawal(event)" class="space-y-6">
+        
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 uppercase mb-2">Select Currency & Network</label>
+          <select id="assetSelect" onchange="updateNetworkNotice()" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-blue-500">
+            <option value="usdt">USDT - BNB Smart Chain (BEP20)</option>
+            <option value="btc">Bitcoin (BTC Network)</option>
+            <option value="eth">Ethereum (ERC20)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Destination Wallet Address</label>
+          <input 
+            type="text" 
+            required 
+            placeholder="Paste your wallet address here..." 
+            class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white text-sm font-mono focus:outline-none focus:border-blue-500"
+          >
+          <span id="networkNotice" class="text-xs text-amber-400 mt-1.5 block">
+            ⚠️ Please double-check that your destination address supports BNB Smart Chain (BEP20).
+          </span>
+        </div>
+
+        <div>
+          <div class="flex justify-between items-center mb-1">
+            <label class="text-xs font-semibold text-gray-300 uppercase">Amount to Withdraw (USD)</label>
+            <button type="button" onclick="setMaxAmount()" class="text-xs text-blue-400 hover:underline font-semibold">Use Max Balance</button>
+          </div>
+          <div class="relative">
+            <span class="absolute left-3.5 top-3 text-gray-400 text-sm font-bold">$</span>
+            <input 
+              id="withdrawAmount" 
+              type="number" 
+              min="20" 
+              max="4850.20" 
+              step="0.01" 
+              required 
+              placeholder="0.00" 
+              class="w-full pl-8 pr-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-blue-500"
+            >
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">2FA Authenticator Code (If Enabled)</label>
+          <input 
+            type="text" 
+            maxlength="6" 
+            placeholder="6-digit 2FA code" 
+            class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white text-sm font-mono focus:outline-none focus:border-blue-500"
+          >
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl shadow-lg shadow-blue-600/30 transition"
+        >
+          Confirm & Process Withdrawal
+        </button>
+
+      </form>
+    </div>
+  </main>
+
+  <script>
+    lucide.createIcons();
+
+    function setMaxAmount() {
+      document.getElementById('withdrawAmount').value = 4850.20;
+    }
+
+    function updateNetworkNotice() {
+      const asset = document.getElementById('assetSelect').value;
+      const notice = document.getElementById('networkNotice');
+      if (asset === 'usdt') {
+        notice.innerText = '⚠️ Please double-check that your destination address supports BNB Smart Chain (BEP20).';
+      } else if (asset === 'btc') {
+        notice.innerText = '⚠️ Ensure your wallet address is a valid Bitcoin (BTC) mainnet address.';
+      } else {
+        notice.innerText = '⚠️ Ensure your wallet address supports Ethereum (ERC20) tokens.';
+      }
+    }
+
+    function handleWithdrawal(e) {
+      e.preventDefault();
+      alert('Withdrawal request submitted! The funds will be transferred to your wallet following automated blockchain verification.');
+      window.location.href = 'dashboard.html';
+    }
+  </script>
+</body>
+</html>

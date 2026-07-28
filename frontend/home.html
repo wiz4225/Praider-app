@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRAIDER - Next-Gen Crypto Investment Platform</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0f19;
+      color: #f3f4f6;
+    }
+    .glow {
+      box-shadow: 0 0 50px -10px rgba(59, 130, 246, 0.3);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- Navigation Bar -->
+  <nav class="sticky top-0 z-40 backdrop-blur-md bg-slate-900/80 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="#" class="flex items-center space-x-2">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-extrabold text-xl text-white shadow-lg">
+          P
+        </div>
+        <span class="text-2xl font-bold tracking-wider text-white">PRAIDER</span>
+      </a>
+
+      <!-- Links -->
+      <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+        <a href="#features" class="hover:text-blue-400 transition">Features</a>
+        <a href="#plans" class="hover:text-blue-400 transition">Investment Plans</a>
+        <a href="#markets" class="hover:text-blue-400 transition">Markets</a>
+        <a href="#about" class="hover:text-blue-400 transition">About Us</a>
+      </div>
+
+    <!-- Action Buttons -->
+      <div class="flex items-center space-x-4">
+        <a href="auth.html" class="text-sm font-medium hover:text-blue-400 transition-colors">
+          Sign In
+        </a>
+        <a href="auth.html" class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-xl transition-all shadow-lg shadow-blue-600/30">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </nav>  
+
+   
+
+
+  
+
+  
+
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative pt-20 pb-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-blue-400 bg-blue-950/60 border border-blue-800/50 rounded-full">
+          AI-Powered Trading & Investing
+        </span>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-6 leading-tight">
+          Smart Crypto Investments for <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Maximum Yield</span>
+        </h1>
+        <p class="mt-4 text-gray-400 text-lg">
+          Automate your portfolio growth with Praider's high-frequency trading algorithms and secure multi-asset vault system.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <button onclick="openModal('registerModal')" class="px-7 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl shadow-lg shadow-blue-600/30 transition">
+            Start Investing Now
+          </button>
+          <a href="#plans" class="px-7 py-3.5 bg-slate-800 hover:bg-slate-700 text-gray-200 font-semibold rounded-xl border border-slate-700 transition">
+            View Plans
+          </a>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-slate-800">
+          <div>
+            <div class="text-2xl font-bold text-white">$120M+</div>
+            <div class="text-xs text-gray-400">Assets Managed</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-white">45K+</div>
+            <div class="text-xs text-gray-400">Active Investors</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-white">99.9%</div>
+            <div class="text-xs text-gray-400">Uptime & Security</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Card Mockup -->
+      <div class="relative flex justify-center">
+        <div class="w-full max-w-md p-6 bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl glow">
+          <div class="flex justify-between items-center mb-6">
+            <div>
+              <p class="text-xs text-gray-400">Total Portfolio Balance</p>
+              <h3 class="text-3xl font-bold text-white mt-1">$48,290.50</h3>
+            </div>
+            <span class="text-xs text-emerald-400 font-semibold bg-emerald-950/50 px-2.5 py-1 rounded-md border border-emerald-800/40">
+              +14.2% / month
+            </span>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-center justify-between p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+              <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-500 flex items-center justify-center font-bold text-xs">₿</div>
+                <div>
+                  <div class="text-sm font-semibold text-white">Bitcoin</div>
+                  <div class="text-xs text-gray-400">BTC</div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="text-sm font-semibold text-white">$66,100.00</div>
+                <div class="text-xs text-emerald-400">+2.4%</div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between p-3 bg-slate-800/50 rounded-xl border border-slate-800">
+              <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs">Ξ</div>
+                <div>
+                  <div class="text-sm font-semibold text-white">Ethereum</div>
+                  <div class="text-xs text-gray-400">ETH</div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="text-sm font-semibold text-white">$1,930.00</div>
+                <div class="text-xs text-emerald-400">+1.8%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl font-bold text-white">Why Choose Praider?</h2>
+        <p class="text-gray-400 mt-2">Built with institutional-grade security and advanced algorithmic trading strategy.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl hover:border-blue-600/50 transition">
+          <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="cpu"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Automated AI Trading</h3>
+          <p class="text-gray-400 text-sm">Algorithmic execution ensures optimized entry and exit points around the clock.</p>
+        </div>
+
+        <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl hover:border-blue-600/50 transition">
+          <div class="w-12 h-12 bg-emerald-600/20 text-emerald-400 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="shield-check"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Cold Vault Security</h3>
+          <p class="text-gray-400 text-sm">Over 95% of digital assets are stored offline in multi-signature cold storage.</p>
+        </div>
+
+        <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl hover:border-blue-600/50 transition">
+          <div class="w-12 h-12 bg-purple-600/20 text-purple-400 rounded-xl flex items-center justify-center mb-6">
+            <i data-lucide="zap"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Instant Withdrawals</h3>
+          <p class="text-gray-400 text-sm">Request payout anytime. Automated payouts are processed within minutes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment Plans Section -->
+  <section id="plans" class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl font-bold text-white">Investment Plans</h2>
+        <p class="text-gray-400 mt-2">Pick a strategy that fits your growth targets.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Starter Plan -->
+        <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">
+          <h3 class="text-lg font-semibold text-gray-300">Starter</h3>
+          <div class="text-3xl font-bold text-white mt-4 mb-2">1.5% <span class="text-sm font-normal text-gray-400">/ Daily</span></div>
+          <p class="text-xs text-gray-400 mb-6">Ideal for beginners entering the market.</p>
+          <ul class="space-y-3 text-sm text-gray-300 mb-8">
+            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>Min Investment: $100</span></li>
+            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>Duration: 7 Days</span></li>
+            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>Principal Return</span></li>
+          </ul>
+          <button onclick="openModal('registerModal')" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-white font-medium rounded-xl border border-slate-700 transition">Select Plan</button>
+        </div>
+
+        <!-- Pro Plan -->
+        <div class="p-8 bg-slate-900 border-2 border-blue-600 rounded-2xl relative shadow-xl">
+          <span class="absolute -top-3 right-6 bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-semibold">POPULAR</span>
+          <h3 class="text-lg font-semibold text-gray-300">Pro Trader</h3>
+          <div class="text-3xl font-bold text-white mt-4 mb-2">2.8% <span class="text-sm font-normal text-gray-400">/ Daily</span></div>
+          <p class="text-xs text-gray-400 mb-6">Optimized for consistent returns.</p>
+          <ul class="space-y-3 text-sm text-gray-300 mb-8">
+            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>Min Investment: $1,000</span></li>
+            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>Duration: 14 Days</span></li>
+            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>Dedicated Account Manager</span></li>
+          </ul>
+          <button onclick="openModal('registerModal')" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-xl transition">Select Plan</button>
+        </div>
+
+        <!-- VIP Plan -->
+        <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl">
+          <h3 class="text-lg font-semibold text-gray-300">Institutional</h3>
+          <div class="text-3xl font-bold text-white mt-4 mb-2">4.0% <span class="text-sm font-normal text-gray-400">/ Daily</span></div>
+          <p class="text-xs text-gray-400 mb-6">Designed for high-net-worth portfolios.</p>
+          <ul class="space-y-3 text-sm text-gray-300 mb-8">
+            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>Min Investment: $10,000</span></li>
+            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>Duration: 30 Days</span></li>
+            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i><span>24/7 VIP Support & Custom API</span></li>
+          </ul>
+          <button onclick="openModal('registerModal')" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-white font-medium rounded-xl border border-slate-700 transition">Select Plan</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Markets Section -->
+  <section id="markets" class="py-20 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl font-bold text-white">Live Crypto Markets</h2>
+        <p class="text-gray-400 mt-2">Track real-time market prices and trading volumes supported by Praider vaults.</p>
+      </div>
+
+      <div class="overflow-x-auto bg-slate-900 border border-slate-800 rounded-2xl shadow-xl">
+        <table class="w-full text-left text-sm text-gray-300">
+          <thead class="text-xs uppercase bg-slate-800/80 text-gray-400 border-b border-slate-800">
+            <tr>
+              <th scope="col" class="px-6 py-4">Asset</th>
+              <th scope="col" class="px-6 py-4">Price</th>
+              <th scope="col" class="px-6 py-4">24h Change</th>
+              <th scope="col" class="px-6 py-4">24h Volume</th>
+              <th scope="col" class="px-6 py-4 text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800">
+            <tr class="hover:bg-slate-800/40 transition">
+              <td class="px-6 py-4 font-semibold text-white flex items-center space-x-3">
+                <span class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-500 flex items-center justify-center text-xs font-bold">₿</span>
+                <span>Bitcoin <span class="text-gray-500 text-xs">BTC</span></span>
+              </td>
+              <td class="px-6 py-4 text-white font-medium">$66,100.00</td>
+              <td class="px-6 py-4 text-emerald-400 font-semibold">+2.41%</td>
+              <td class="px-6 py-4 text-gray-400">$28.1B</td>
+              <td class="px-6 py-4 text-right">
+                <button onclick="openModal('registerModal')" class="px-3 py-1.5 text-xs font-medium text-blue-400 bg-blue-950/60 hover:bg-blue-900/60 rounded-lg border border-blue-800/50 transition">Trade</button>
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-800/40 transition">
+              <td class="px-6 py-4 font-semibold text-white flex items-center space-x-3">
+                <span class="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xs font-bold">Ξ</span>
+                <span>Ethereum <span class="text-gray-500 text-xs">ETH</span></span>
+              </td>
+              <td class="px-6 py-4 text-white font-medium">$1,933.00</td>
+              <td class="px-6 py-4 text-emerald-400 font-semibold">+1.85%</td>
+              <td class="px-6 py-4 text-gray-400">$10.8B</td>
+              <td class="px-6 py-4 text-right">
+                <button onclick="openModal('registerModal')" class="px-3 py-1.5 text-xs font-medium text-blue-400 bg-blue-950/60 hover:bg-blue-900/60 rounded-lg border border-blue-800/50 transition">Trade</button>
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-800/40 transition">
+              <td class="px-6 py-4 font-semibold text-white flex items-center space-x-3">
+                <span class="w-7 h-7 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-xs font-bold">SOL</span>
+                <span>Solana <span class="text-gray-500 text-xs">SOL</span></span>
+              </td>
+              <td class="px-6 py-4 text-white font-medium">$77.90</td>
+              <td class="px-6 py-4 text-emerald-400 font-semibold">+3.12%</td>
+              <td class="px-6 py-4 text-gray-400">$1.6B</td>
+              <td class="px-6 py-4 text-right">
+                <button onclick="openModal('registerModal')" class="px-3 py-1.5 text-xs font-medium text-blue-400 bg-blue-950/60 hover:bg-blue-900/60 rounded-lg border border-blue-800/50 transition">Trade</button>
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-800/40 transition">
+              <td class="px-6 py-4 font-semibold text-white flex items-center space-x-3">
+                <span class="w-7 h-7 rounded-full bg-amber-600/20 text-amber-400 flex items-center justify-center text-xs font-bold">BNB</span>
+                <span>BNB <span class="text-gray-500 text-xs">BNB</span></span>
+              </td>
+              <td class="px-6 py-4 text-white font-medium">$570.00</td>
+              <td class="px-6 py-4 text-emerald-400 font-semibold">+0.50%</td>
+              <td class="px-6 py-4 text-gray-400">$990M</td>
+              <td class="px-6 py-4 text-right">
+                <button onclick="openModal('registerModal')" class="px-3 py-1.5 text-xs font-medium text-blue-400 bg-blue-950/60 hover:bg-blue-900/60 rounded-lg border border-blue-800/50 transition">Trade</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-blue-400 bg-blue-950/60 border border-blue-800/50 rounded-full">
+            About Praider
+          </span>
+          <h2 class="text-3xl font-bold text-white mt-6">Redefining Digital Asset Growth</h2>
+          <p class="text-gray-400 mt-4 leading-relaxed">
+            Founded with the mission to democratize institutional-grade crypto trading, Praider bridges the gap between sophisticated quantitative algorithms and retail investors. 
+          </p>
+          <p class="text-gray-400 mt-4 leading-relaxed">
+            Our platform combines cutting-edge risk management protocols with automated liquidity routing to ensure optimized yield while keeping client security at the core of everything we do.
+          </p>
+
+          <div class="grid grid-cols-2 gap-6 mt-8">
+            <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl">
+              <i data-lucide="lock" class="w-6 h-6 text-blue-400 mb-2"></i>
+              <h4 class="font-bold text-white text-base">Bank-Grade Encryption</h4>
+              <p class="text-xs text-gray-400 mt-1">End-to-end multi-layer key architecture.</p>
+            </div>
+            <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl">
+              <i data-lucide="globe" class="w-6 h-6 text-indigo-400 mb-2"></i>
+              <h4 class="font-bold text-white text-base">Global Compliance</h4>
+              <p class="text-xs text-gray-400 mt-1">Strict regulatory transparency & auditing.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side Illustration Box -->
+        <div class="p-8 bg-slate-900 border border-slate-800 rounded-2xl space-y-6">
+          <h3 class="text-xl font-bold text-white mb-4">Our Core Milestones</h3>
+          <div class="flex items-start space-x-4">
+            <div class="w-8 h-8 rounded-full bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold text-sm shrink-0">1</div>
+            <div>
+              <h4 class="text-white font-semibold">Algorithmic Engine Launch</h4>
+              <p class="text-xs text-gray-400 mt-0.5">Developed proprietary arbitrage and high-frequency liquidity pools.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="w-8 h-8 rounded-full bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold text-sm shrink-0">2</div>
+            <div>
+              <h4 class="text-white font-semibold">Cold Storage Vault Integration</h4>
+              <p class="text-xs text-gray-400 mt-0.5">Partnered with top custody providers to secure client deposits offline.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="w-8 h-8 rounded-full bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold text-sm shrink-0">3</div>
+            <div>
+              <h4 class="text-white font-semibold">Cross-Border Expansion</h4>
+              <p class="text-xs text-gray-400 mt-0.5">Serving investors across 120+ countries with 24/7 client operations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-12 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6 text-center md:flex md:justify-between md:text-left text-gray-500 text-sm">
+      <p>&copy; 2026 PRAIDER Inc. All rights reserved.</p>
+      <div class="space-x-6 mt-4 md:mt-0">
+        <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+        <a href="#" class="hover:text-gray-300">Terms of Service</a>
+        <a href="#" class="hover:text-gray-300">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sign In Modal -->
+  <div id="loginModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 w-full max-w-md rounded-2xl p-8 relative">
+      <button onclick="closeModal('loginModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+        <i data-lucide="x"></i>
+      </button>
+      <h3 class="text-2xl font-bold text-white mb-2">Welcome Back</h3>
+      <p class="text-sm text-gray-400 mb-6">Enter your credentials to access your Praider vault.</p>
+      
+      <form class="space-y-4" onsubmit="event.preventDefault();">
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Email Address</label>
+          <input type="email" placeholder="name@example.com" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Password</label>
+          <input type="password" placeholder="••••••••" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-blue-500">
+        </div>
+        <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl shadow-lg transition">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Get Started Modal -->
+  <div id="registerModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 w-full max-w-md rounded-2xl p-8 relative">
+      <button onclick="closeModal('registerModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+        <i data-lucide="x"></i>
+      </button>
+      <h3 class="text-2xl font-bold text-white mb-2">Create an Account</h3>
+      <p class="text-sm text-gray-400 mb-6">Start growing your portfolio with Praider today.</p>
+      
+      <form class="space-y-4" onsubmit="event.preventDefault();">
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Full Name</label>
+          <input type="text" placeholder="John Doe" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Email Address</label>
+          <input type="email" placeholder="name@example.com" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Password</label>
+          <input type="password" placeholder="••••••••" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-blue-500">
+        </div>
+        <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl shadow-lg transition">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript for Icons and Modals -->
+  <script>
+    lucide.createIcons();
+
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
