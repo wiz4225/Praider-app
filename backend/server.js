@@ -186,3 +186,11 @@ app.listen(PORT, () => {
   console.log(`🚀 PRAIDER Backend running on port ${PORT}`);
 });
 module.exports = app;
+// At the bottom of backend/server.js:
+module.exports = app;
+
+// Keep your app.listen(...) block so it still works locally!
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
